@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 test
+<?phpinfo()?>
 <body>
 </body>
 </html>
