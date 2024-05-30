@@ -1,6 +1,5 @@
 <?
-include_once $_SERVER['DOCUMENT_ROOT'] . '/connect.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/func/config.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.header.php';
 ?>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -29,24 +28,13 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/func/config.php';
     // 매 초마다 퇴근 시간 업데이트
     setInterval(updateRemainingTime, 1000);
 </script>
-
-<!doctype html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</head>
 <?
     $query = "SELECT user_ip FROM user_binfo WHERE user_ip = :user_ip";
     $stmt = $connect->prepare($query);
     $stmt->bindParam(":user_ip", $user_ip);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
     if ($row) {
         $user_ip = $row['user_ip'];
         echo "당신의 IP는 " . $user_ip . "입니다.";
