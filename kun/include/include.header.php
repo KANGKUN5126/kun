@@ -2,7 +2,6 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/include/connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/func/config.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/script/main.js';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/css/kun.scss';
 ?>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

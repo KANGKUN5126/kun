@@ -7,30 +7,35 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.header.php';
     <div class="inner">
         <header><h1>회원가입</h1>
         </header>
-        <form name="join_form">
-        <div class="flex ">
-            <div>
-                <h3>회원 아이디</h3>
-                <p>
-                    <input type="text" name="user_id">
-                </p>
-            </div>
+        <form name="join_form" method="POST" action="/proc/regist_proc.php">
+            <input type="hidden" name="user_ip" value="<?=$user_ip?>">
+            <input type="hidden" name="sign_date" value="<?=$time?>">
+            <div class="flex ">
+                <div>
+                    <h3>회원 아이디</h3>
+                    <p>
+                        <input type="text" name="user_id">
+                    </p>
+                </div>
 
-            <div>
+                <div>
 
-                <h3>비밀번호</h3>
-                <p>
-                    <input type="text" name="password">
-                </p>
-            </div>
+                    <h3>비밀번호</h3>
+                    <p>
+                        <input type="text" name="password">
+                    </p>
+                </div>
 
-            <div>
-                <h3>이름</h3>
-                <p>
-                    <input type="text" name="user_name">
-                </p>
+                <div>
+                    <h3>이름</h3>
+                    <p>
+                        <input type="text" name="user_name">
+                    </p>
+                </div>
             </div>
-        </div>
+            <footer>
+                <button type="submit" class="button">완료</button>
+            </footer>
         </form>
     </div>
 </section>

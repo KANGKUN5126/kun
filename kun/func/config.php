@@ -24,4 +24,6 @@ if (!isset($_SESSION['lunch_menu'])) {
 
 #유저 아이피
 $user_ip = $_SERVER['REMOTE_ADDR'];
+#시간
+$time = time();
 ?>
