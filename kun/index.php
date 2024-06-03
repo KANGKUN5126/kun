@@ -4,6 +4,16 @@
 
     $myClass = new MyClass();
 ?>
+<script>
+    $(document).on('click', '#board_move', function(){
+        let value = $(this).data('value');
+        if(!value){
+            alert('로그인 해주세요.');
+            location.replace('/view/login.php')
+            return false;
+        }
+    });
+</script>
 
 <body>
 
@@ -34,7 +44,7 @@
         </div>
 
         <footer>
-            <a href="/view/board/" class="button">Get Started</a>
+            <a href="/view/board/" class="button" data-value="<?= $_SESSION['user_sid'] ?>" id="board_move">Get Started</a>
         </footer>
     </div>
 </section>
