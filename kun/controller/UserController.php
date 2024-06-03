@@ -1,5 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/model/UserModel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/func/include.function.php';
 
 class UserController
 {
@@ -13,13 +14,21 @@ class UserController
     public function registerUser($user_id, $password, $user_name, $user_ip, $time)
     {
         $success = $this->userModel->insertUser($user_id, $password, $user_name, $user_ip, $time);
-        
         if ($success) {
-            echo '가입에 성공하셨습니다.';
-            exit();
+            PutMessageLocation("가입이 완료되었습니다." , "/");
         } else {
-            echo '가입에 실패하였습니다. 다시 시도해주세요.';
-            exit();
+            PutMessageBack("가입에 실패하였습니다. 다시한번 확인해주세요.");
+        }
+
+    }
+
+    public function loginUser($user_id, $password, $user_name)
+    {
+        $success = $this->userModel->loginUser($user_id, $password, $user_name);
+        if ($success) {
+            PutMessageLocation("로그인되었습니다." , "/");
+        } else {
+            PutMessageBack("로그인에 실패하였습니다. 다시한번 확인해주세요.");
         }
 
     }

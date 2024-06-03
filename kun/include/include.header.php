@@ -2,6 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/include/connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/func/config.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/script/main.js';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.function.php';
 ?>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -29,8 +30,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/script/main.js';
     <div class="inner">
         <a href="/" class="logo"><strong>Projection</strong> by kuntest</a>
         <nav id="nav"><a href="/">Home</a>
-            <a href="/view/join.php">join</a>
-            <a href="/elements.html">Elements</a>
+            <a href="/view/join.php">Join</a>
+            <a href="/view/login.php">Login</a>
         </nav>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
     </div>

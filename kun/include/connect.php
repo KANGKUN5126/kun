@@ -1,6 +1,6 @@
 <?php
     $dbHost = "localhost";    // 호스트 주소(localhost, 120.0.0.1)
-    $dbName = "kun_db";      // 데이타 베이스(DataBase) 이름
+    $dbName = "kun_db";      // 데이터 베이스(DataBase) 이름
     $dbUser = "toy";       // DB 아이디
     $dbPass = "rlarkdrjs1!"; // DB 패스워드
     $dbPort = 3306; // DB 포트
