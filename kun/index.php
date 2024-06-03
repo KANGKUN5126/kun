@@ -1,6 +1,6 @@
 <?php
     include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.header.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/controller/main.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/controller/Main.php';
 
     $myClass = new MyClass();
 ?>
@@ -9,7 +9,7 @@
 
 <section id="banner">
     <div class="inner">
-        <header><h1>시간 보내기</h1>
+        <header><h1><?=($_SESSION['user_name']) ? $_SESSION['user_name'].'님 안녕하세요.' : '시간 보내기'?></h1>
         </header>
         <div class="flex ">
 
@@ -34,7 +34,7 @@
         </div>
 
         <footer>
-            <a href="#" class="button">Get Started</a>
+            <a href="/view/board/" class="button">Get Started</a>
         </footer>
     </div>
 </section>
