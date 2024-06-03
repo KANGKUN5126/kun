@@ -7,9 +7,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.header.php';
     <div class="inner">
         <header><h1>로그인</h1>
         </header>
-        <form name="join_form" method="POST" action="/proc/regist_proc.php">
+        <form name="join_form" method="POST" action="/proc/">
             <input type="hidden" name="user_ip" value="<?=$user_ip?>">
             <input type="hidden" name="sign_date" value="<?=$time?>">
+            <input type="hidden" name="mode" value="login">
             <div class="flex ">
                 <div>
                     <h3>회원 아이디</h3>
@@ -19,7 +20,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.header.php';
                 </div>
 
                 <div>
-
                     <h3>비밀번호</h3>
                     <p>
                         <input type="text" name="password">

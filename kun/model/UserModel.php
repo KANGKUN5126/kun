@@ -44,18 +44,17 @@ class UserModel
     public function loginUser($user_id, $password, $user_name)
     {
         try {
-            $select_query = "select count(*) from user_binfo where user_id = :user_id and user_name = :user_name and password = :password";
+            $select_query = "select * from user_binfo where user_id = :user_id and user_name = :user_name and password = :password";
             $stmt = $this->connect->prepare($select_query);
             $stmt->bindParam(':user_id', $user_id);
             $stmt->bindParam(':user_name', $user_name);
             $stmt->bindParam(':password', $password);
             $stmt->execute();
-            $count = $stmt->fetchColumn();
-            if ($count !== 0) {
-
-                if (!$success) {
-                    throw new Exception("User registration failed");
-                }
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($user) {
+                $_SESSION['user_level'] = '1';
+                $_SESSION['login'] = 'ok';
+                $_SESSION['user_name'] = $user['user_name'];
                 return true;
             } else {
                 return false;
@@ -65,7 +64,7 @@ class UserModel
             return false;
         }
     }
-
+    
 }
 
 ?>

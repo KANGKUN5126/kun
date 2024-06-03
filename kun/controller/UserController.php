@@ -32,6 +32,15 @@ class UserController
         }
 
     }
+
+    public function logoutUser()
+    {
+        unset($_SESSION['user_level']);
+        unset($_SESSION['login']);
+        unset($_SESSION['user_name']);
+        putMessageBack("로그아웃 되었습니다.");
+        exit;
+    }
 }
 
 ?>
