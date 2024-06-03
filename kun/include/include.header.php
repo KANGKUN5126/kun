@@ -36,9 +36,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.function.php';
     <div class="inner">
         <a href="/" class="logo"><strong>Projection</strong> by kuntest</a>
         <nav id="nav"><a href="/">Home</a>
-            <a href="/view/join.php">Join</a>
-            <a href="<?= $_SESSION['login'] == 'ok' ? '/proc/index.php?mode=logout' : '/view/login.php' ?>">
-                <?= $_SESSION['login'] == 'ok' ? 'Logout' : 'Login' ?>
+            <?= ($_SESSION['user_sid']) ? '' : '<a href="/view/join.php">Join</a>'?>
+            <a href="<?= ($_SESSION['user_sid']) ? '/proc/index.php?mode=logout' : '/view/login.php' ?>">
+                <?= ($_SESSION['user_sid']) ? 'Logout' : 'Login' ?>
             </a>
         </nav>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>

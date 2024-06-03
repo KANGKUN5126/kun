@@ -55,6 +55,7 @@ class UserModel
                 $_SESSION['user_level'] = '1';
                 $_SESSION['login'] = 'ok';
                 $_SESSION['user_name'] = $user['user_name'];
+                $_SESSION['user_sid'] = $user['sid'];
                 return true;
             } else {
                 return false;

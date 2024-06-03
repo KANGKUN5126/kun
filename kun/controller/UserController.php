@@ -38,6 +38,7 @@ class UserController
         unset($_SESSION['user_level']);
         unset($_SESSION['login']);
         unset($_SESSION['user_name']);
+        unset($_SESSION['user_sid']);
         putMessageBack("로그아웃 되었습니다.");
         exit;
     }
