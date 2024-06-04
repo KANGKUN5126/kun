@@ -12,8 +12,9 @@ $user = $userController->getUser($user_sid);
     <body>
 
     <section id="banner">
-        <form method="POST" name="board_form" id="board_form" action="/proc">
+        <form method="POST" name="board_form" id="board_form" action="/proc/">
             <input type="hidden" name="user_sid" value="<?=$user['sid']?>">
+            <input type="hidden" name="type" value="board">
             <input type="hidden" name="mode" value="insert">
             <div class="inner">
                 <div class="input-group input-group-sm mb-3">

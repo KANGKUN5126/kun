@@ -24,6 +24,10 @@ if (!isset($_SESSION['lunch_menu'])) {
 
 #유저 아이피
 $user_ip = $_SERVER['REMOTE_ADDR'];
+#유저 번호
+$user_sid = $_SESSION['user_sid'];
+#유저 이름
+$user_name = $_SESSION['user_name'];
 #시간
 $time = time();
 ?>

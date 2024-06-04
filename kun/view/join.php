@@ -10,6 +10,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.header.php';
         <form name="join_form" method="POST" action="/proc/">
             <input type="hidden" name="user_ip" value="<?=$user_ip?>">
             <input type="hidden" name="sign_date" value="<?=$time?>">
+            <input type="hidden" name="type" value="user">
             <input type="hidden" name="mode" value="regist">
             <div class="flex ">
                 <div>

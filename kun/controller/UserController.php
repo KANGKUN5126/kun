@@ -42,6 +42,14 @@ class UserController
         putMessageBack("로그아웃 되었습니다.");
         exit;
     }
+
+    public function getUser($user_sid)
+    {
+        $user = $this->userModel->getUser($user_sid);
+        return $user;
+    }
+
+
 }
 
 ?>

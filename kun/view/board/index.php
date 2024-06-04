@@ -45,7 +45,7 @@ $boardData = $BoardController->boardList();
                 </table>
             </div>
             <footer>
-                <a href="/view/board/" class="button" data-value="<?= $_SESSION['user_sid'] ?>" id="board_move">글 작성</a>
+                <a href="/view/board/upsert.php" class="button" data-value="<?= $_SESSION['user_sid'] ?>" id="board_move">글 작성</a>
             </footer>
         </div>
     </section>
