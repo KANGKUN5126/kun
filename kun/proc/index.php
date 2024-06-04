@@ -17,8 +17,8 @@ $content = $_POST['content'] ?? '';
 
 $userController = new UserController($connect);
 $boardController = new BoardController($connect);
-echo '123';
-if($type = 'user') {
+
+if($type == 'user') {
     switch ($mode) {
         case 'regist' :
             $userController->registerUser($user_id, $password, $user_name, $user_ip, $time);
@@ -33,9 +33,10 @@ if($type = 'user') {
             break;
     }
 } else {
-
     switch ($mode) {
-
+        case 'insert' :
+            $boardController->insert($user_sid, $writer, $password, $subject, $content, $time );
+            break;
 
 
     }

@@ -17,6 +17,16 @@ class BoardController
         return $this->boardModel->getList();
     }
 
+    public function insert($user_sid, $writer, $password , $subject, $content, $time)
+    {
+        $success = $this->boardModel->insert($user_sid, $writer, $password, $subject, $content, $time);
+        if ($success) {
+            PutMessageLocation("작성이 완료되었습니다." , "/");
+        } else {
+            PutMessageBack("작성에 실패하였습니다. 다시한번 확인해주세요.");
+        }
+    }
+
 
 }
 
