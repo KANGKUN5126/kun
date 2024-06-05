@@ -75,7 +75,6 @@ class BoardModel
             $count = $stmt->fetchColumn();
 
             if($count > 0){
-                echo '777';
                 $update_query = "update board set writer=:writer , subject=:subject , content=:content , modify_date=:modify_date where sid=:number";
                 $stmt = $this->connect->prepare($update_query);
                 $stmt->bindParam(':writer', $writer);
@@ -91,11 +90,22 @@ class BoardModel
                 return true;
             }
         } catch (Exception $e) {
-            echo '456';
-            exit;
             error_log('Error: ' . $e->getMessage());
             return false;
         }
+    }
+
+    public function delete($number)
+    {
+        $delete_query = "update board set del='Y' where sid=:number";
+        $stmt = $this->connect->prepare($delete_query);
+        $stmt->bindParam(':number', $number);
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
+        return true;
     }
 
 }

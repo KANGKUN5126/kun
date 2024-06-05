@@ -14,7 +14,7 @@ $type = isset($_POST['type']) ? $_POST['type'] : $_GET['type'];
 $writer = $_POST['writer'] ?? '';
 $subject = $_POST['subject'] ?? '';
 $content = $_POST['content'] ?? '';
-$number = $_POST['number'] ?? '';
+$number = isset($_POST['number']) ? $_POST['number'] : $_GET['number'];
 $userController = new UserController($connect);
 $boardController = new BoardController($connect);
 if($type == 'user') {
@@ -41,7 +41,9 @@ if($type == 'user') {
             $boardController->update($writer, $password, $subject, $content, $time , $number);
             break;
 
-
+        case 'delete':
+            $boardController->delete($number , $password);
+            break;
     }
 }
 

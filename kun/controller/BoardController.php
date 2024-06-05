@@ -45,7 +45,18 @@ class BoardController
         if ($success) {
             PutMessageLocation("수정이 완료되었습니다.", "/view/board/");
         } else {
-            PutMessageBack("수정이 실패하였습니다.");
+            PutMessageBack("수정에 실패하였습니다.");
+        }
+    }
+
+    public function delete($number)
+    {
+        $success = $this->boardModel->delete($number);
+
+        if ($success) {
+            PutMessageLocation("삭제되었습니다.", "/view/board/");
+        } else {
+            PutMessageBack("삭제에 실패하였습니다.");
         }
     }
 

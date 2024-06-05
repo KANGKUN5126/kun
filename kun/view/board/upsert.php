@@ -10,7 +10,16 @@ $board_number = isset($_GET['number']) ? $_GET['number'] : '';
 $number = isset($_GET['number']) ? $_GET['number'] : '';
 $board_data = $BoardController->view($number);
 ?>
-
+    <script>
+        $(document).ready(function() {
+            var number = "<?=$number?>";
+            var type = $('input[name="type"]').val();
+            var mode = 'delete';
+            $(document).on('click', '.red_btn', function () {
+                location.href = "/proc/index.php?number=" + number + "&type=" + type + "&mode=" + mode;
+            });
+        });
+    </script>
     <body>
 
     <section id="banner">
@@ -28,7 +37,7 @@ $board_data = $BoardController->view($number);
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">작성 비밀번호</span>
-                    <input type="text" name="password" class="form-control" value="" placeholder="수정 및 삭제에 사용됩니다." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" name="password" class="form-control" value="" placeholder="<?=($board_number) ? '게시글 작성 시 비밀번호를 입력해주세요.' : '수정에 사용됩니다.'?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
 
                 <div class="input-group mb-3">
@@ -41,7 +50,10 @@ $board_data = $BoardController->view($number);
                     <textarea class="form-control" name="content" placeholder="내용을 입력해주세요" id="floatingTextarea2" style="height: 100px"><?=$board_data['content']?></textarea>
                 </div>
                 <br>
-                <button type="submit"/><?=($board_number) ? '수정' : '제출'?>
+                <? if($user['sid'] == $board_data['usid']) { ?>
+                    <button type="submit"/><?=($board_number) ? '수정' : '제출'?>
+                    <button class="red_btn" type="button">삭제</button>
+                <? } ?>
             </div>
         </form>
     </section>
