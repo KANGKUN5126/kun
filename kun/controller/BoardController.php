@@ -33,6 +33,11 @@ class BoardController
         return $board_view;
     }
 
+    public function count($number)
+    {
+        $count_view = $this->boardModel->count($number);
+    }
+
 }
 
 ?>

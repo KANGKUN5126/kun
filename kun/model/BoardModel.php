@@ -52,10 +52,12 @@ class BoardModel
         }
     }
 
-    public function update()
+    public function count($number)
     {
-        $update_query = "update count from board set count+1";
-        $stmt = $this->connect->prepare($plus_count_query);
+        $count_query = "update board set count = count+1 where sid=:number";
+
+        $stmt = $this->connect->prepare($count_query);
+        $stmt->bindParam(':number', $number);
         $stmt->execute();
     }
 
