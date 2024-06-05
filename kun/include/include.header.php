@@ -3,6 +3,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/include/connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/func/config.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/script/main.js';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.function.php';
+error_reporting( E_ALL );
+ini_set( "display_errors", 1 );
+
+$_SESSION['user_sid'] = $_SESSION['user_sid'] ?? '';
 ?>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -36,8 +40,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.function.php';
     <div class="inner">
         <a href="/" class="logo"><strong>Projection</strong> by kuntest</a>
         <nav id="nav"><a href="/">Home</a>
-            <?= ($_SESSION['user_sid']) ? '' : '<a href="/view/join.php">Join</a>'?>
-            <a href="<?= ($_SESSION['user_sid']) ? '/proc/index.php?mode=logout' : '/view/login.php' ?>">
+            <?= isset($_SESSION['user_sid']) ? '' : '<a href="/view/join.php">Join</a>'?>
+            <a href="<?= isset($_SESSION['user_sid']) ? '/proc/index.php?mode=logout&type=user' : '/view/login.php' ?>">
                 <?= ($_SESSION['user_sid']) ? 'Logout' : 'Login' ?>
             </a>
         </nav>

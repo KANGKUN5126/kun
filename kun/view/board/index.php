@@ -14,7 +14,6 @@ $boardData = $BoardController->boardList();
             <header><h1>게시판</h1>
             </header>
             <div class="flex ">
-
                 <table class="table">
                     <thead>
                     <tr>

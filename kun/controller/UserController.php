@@ -39,7 +39,7 @@ class UserController
         unset($_SESSION['login']);
         unset($_SESSION['user_name']);
         unset($_SESSION['user_sid']);
-        putMessageBack("로그아웃 되었습니다.");
+        putMessageLocation("로그아웃 되었습니다." , "/");
         exit;
     }
 

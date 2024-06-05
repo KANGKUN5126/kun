@@ -19,7 +19,7 @@
 
 <section id="banner">
     <div class="inner">
-        <header><h1><?=($_SESSION['user_name']) ? $_SESSION['user_name'].'님 안녕하세요.' : '시간 보내기'?></h1>
+        <header><h1><?=isset($_SESSION['user_name']) ? $_SESSION['user_name'].'님 안녕하세요.' : '시간 보내기'?></h1>
         </header>
         <div class="flex ">
 

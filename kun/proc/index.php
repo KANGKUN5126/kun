@@ -8,16 +8,15 @@ $password = $_POST['password'] ?? '';
 $user_name = $_POST['user_name'] ?? '';
 $user_ip = $_POST['user_ip'] ?? '';
 $time = $_POST['sign_date'] ?? '';
-$mode = ($_POST['mode']) ? $_POST['mode'] : $_GET['mode'];
+$mode = isset($_POST['mode']) ? $_POST['mode'] : $_GET['mode'];
 $user_sid = $_POST['user_sid'] ?? '';
-$type = $_POST['type'] ?? '';
+$type = isset($_POST['type']) ? $_POST['type'] : $_GET['type'];
 $writer = $_POST['writer'] ?? '';
 $subject = $_POST['subject'] ?? '';
 $content = $_POST['content'] ?? '';
 
 $userController = new UserController($connect);
 $boardController = new BoardController($connect);
-
 if($type == 'user') {
     switch ($mode) {
         case 'regist' :
