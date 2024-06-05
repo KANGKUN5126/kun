@@ -27,9 +27,9 @@ $boardData = $BoardController->boardList();
                     <tbody class="table-group-divider">
                     <?php if ($boardData): ?>
                         <?php foreach ($boardData as $index => $row): ?>
-                            <tr>
+                            <tr class="view">
                                 <th scope="row"><?= $index + 1 ?></th>
-                                <td><?= $row['subject'] ?></td>
+                                <td><a href="/view/board/view.php?number=<?=$row['sid']?>"><?= $row['subject'] ?></a></td>
                                 <td><?= $row['writer'] ?></td>
                                 <td><?= date('Y-m-d',$row['sign_date']) ?></td>
                                 <td><?= $row['count'] ?></td>

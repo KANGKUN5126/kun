@@ -38,12 +38,18 @@ class BoardModel
 
     }
 
-    public function view()
+    public function view($number)
     {
-        $plus_count_query = "update board set count+1 where sid=:sid";
-        $stmt->bindParam(':sid', $sid);
-        $stmt = $this->connect->prepare($plus_count_query);
-        $stmt->execute();
+        try {
+            $select_query = "SELECT * FROM board WHERE sid=:number and del='N'";
+            $stmt = $this->connect->prepare($select_query);
+            $stmt->bindParam(':number', $number);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC); // Fetch only one row
+        } catch (Exception $e) {
+            error_log('Error: ' . $e->getMessage());
+            return false;
+        }
     }
 
     public function update()

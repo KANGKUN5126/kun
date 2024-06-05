@@ -27,6 +27,12 @@ class BoardController
         }
     }
 
+    public function view($number)
+    {
+        $board_view = $this->boardModel->view($number);
+        return $board_view;
+    }
+
 }
 
 ?>
