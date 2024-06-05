@@ -35,13 +35,12 @@ $_SESSION['user_sid'] = $_SESSION['user_sid'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
-
 <header id="header">
     <div class="inner">
         <a href="/" class="logo"><strong>Projection</strong> by kuntest</a>
         <nav id="nav"><a href="/">Home</a>
-            <?= isset($_SESSION['user_sid']) ? '' : '<a href="/view/join.php">Join</a>'?>
-            <a href="<?= isset($_SESSION['user_sid']) ? '/proc/index.php?mode=logout&type=user' : '/view/login.php' ?>">
+            <?= !empty($_SESSION['user_sid']) ? '' : '<a href="/view/join.php">Join</a>'?>
+            <a href="<?= !empty($_SESSION['user_sid']) ? '/proc/index.php?mode=logout&type=user' : '/view/login.php' ?>">
                 <?= ($_SESSION['user_sid']) ? 'Logout' : 'Login' ?>
             </a>
         </nav>

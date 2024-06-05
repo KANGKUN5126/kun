@@ -51,9 +51,10 @@ $board_data = $BoardController->view($number);
                 </div>
                 <br>
                 <? if($user['sid'] == $board_data['usid']) { ?>
-                    <button type="submit"/><?=($board_number) ? '수정' : '제출'?>
                     <button class="red_btn" type="button">삭제</button>
                 <? } ?>
+                    <button type="submit"/><?=($board_number) ? '수정' : '제출'?>
+                <button type="button" onclick="history.back()">뒤로</button>
             </div>
         </form>
     </section>
