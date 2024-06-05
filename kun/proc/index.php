@@ -14,7 +14,7 @@ $type = isset($_POST['type']) ? $_POST['type'] : $_GET['type'];
 $writer = $_POST['writer'] ?? '';
 $subject = $_POST['subject'] ?? '';
 $content = $_POST['content'] ?? '';
-
+$number = $_POST['number'] ?? '';
 $userController = new UserController($connect);
 $boardController = new BoardController($connect);
 if($type == 'user') {
@@ -35,6 +35,10 @@ if($type == 'user') {
     switch ($mode) {
         case 'insert' :
             $boardController->insert($user_sid, $writer, $password, $subject, $content, $time );
+            break;
+
+        case 'update':
+            $boardController->update($writer, $password, $subject, $content, $time , $number);
             break;
 
 

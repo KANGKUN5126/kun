@@ -61,6 +61,43 @@ class BoardModel
         $stmt->execute();
     }
 
+    public function update($writer , $password ,  $subject , $content , $time , $number)
+    {
+
+
+
+        try {
+            $select_query = "SELECT count(*) FROM board WHERE password=:password and del='N' and sid=:number";
+            $stmt = $this->connect->prepare($select_query);
+            $stmt->bindParam(':password', $password);
+            $stmt->bindParam(':number', $number);
+            $stmt->execute();
+            $count = $stmt->fetchColumn();
+
+            if($count > 0){
+                echo '777';
+                $update_query = "update board set writer=:writer , subject=:subject , content=:content , modify_date=:modify_date where sid=:number";
+                $stmt = $this->connect->prepare($update_query);
+                $stmt->bindParam(':writer', $writer);
+                $stmt->bindParam(':subject', $subject);
+                $stmt->bindParam(':content', $content);
+                $stmt->bindParam(':modify_date', $time);
+                $stmt->bindParam(':number', $number);
+                try {
+                    $stmt->execute();
+                } catch (PDOException $e) {
+                    echo 'Error: ' . $e->getMessage();
+                }
+                return true;
+            }
+        } catch (Exception $e) {
+            echo '456';
+            exit;
+            error_log('Error: ' . $e->getMessage());
+            return false;
+        }
+    }
+
 }
 
 ?>

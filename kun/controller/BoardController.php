@@ -17,11 +17,11 @@ class BoardController
         return $this->boardModel->getList();
     }
 
-    public function insert($user_sid, $writer, $password , $subject, $content, $time)
+    public function insert($user_sid, $writer, $password, $subject, $content, $time)
     {
         $success = $this->boardModel->insert($user_sid, $writer, $password, $subject, $content, $time);
         if ($success) {
-            PutMessageLocation("작성이 완료되었습니다." , "/view/");
+            PutMessageLocation("작성이 완료되었습니다.", "/view/board/");
         } else {
             PutMessageBack("작성에 실패하였습니다. 다시한번 확인해주세요.");
         }
@@ -35,7 +35,18 @@ class BoardController
 
     public function count($number)
     {
-        $count_view = $this->boardModel->count($number);
+        $this->boardModel->count($number);
+    }
+
+    public function update($writer, $password, $subject, $content, $time, $number)
+    {
+        $success = $this->boardModel->update($writer, $password, $subject, $content, $time, $number);
+
+        if ($success) {
+            PutMessageLocation("수정이 완료되었습니다.", "/view/board/");
+        } else {
+            PutMessageBack("수정이 실패하였습니다.");
+        }
     }
 
 }
