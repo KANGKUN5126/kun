@@ -12,7 +12,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.header.php';
             <input type="hidden" name="sign_date" value="<?=$time?>">
             <input type="hidden" name="type" value="user">
             <input type="hidden" name="mode" value="regist">
-            <div class="flex ">
+            <div class="flex flex-column">
                 <div>
                     <h3>회원 아이디</h3>
                     <p>
