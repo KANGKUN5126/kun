@@ -61,6 +61,20 @@
 				$('#navPanel')
 					.css('transition', 'none');
 
+
+			$('.menu_box').click(function() {
+				let menu = $('.quick_inner');
+				let icon = $(this).find('.fa-solid');
+
+				menu.toggleClass('quick_click');
+
+				if(menu.hasClass('quick_click')) {
+					icon.addClass('fa-xmark').removeClass('fa-bars');
+				} else {
+					icon.removeClass('fa-xmark').addClass('fa-bars');
+				}
+			})
+
 	});
 
 })(jQuery);

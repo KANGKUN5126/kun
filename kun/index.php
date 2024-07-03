@@ -43,6 +43,15 @@
 
         </div>
 
+        <div class="quick_menuBox">
+            <div class="menu_box"><i class="fa-solid fa-bars"></i></div>
+            <div class="quick_inner">
+                <!-- 퀵메뉴 뭐 하실지 몰라서 걍 a태그로 만듬 쓰세욤 -->
+                <a href="javascript:void(0)" class="quick_menu">퀵메뉴1</a>
+                <a href="javascript:void(0)" class="quick_menu">퀵메뉴1</a>
+                <a href="javascript:void(0)" class="quick_menu">퀵메뉴1</a>
+            </div>
+
         <footer>
             <a href="/view/board/" class="button" data-value="<?= $_SESSION['user_sid'] ?>" id="board_move">Get Started</a>
         </footer>
