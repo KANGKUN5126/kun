@@ -47,14 +47,16 @@ $board_data = $BoardController->view($number);
 
                 <div class="form-floating">
                     <span class="input-group-text" id="inputGroup-sizing-default">내용</span>
-                    <textarea class="form-control" name="content" placeholder="내용을 입력해주세요" id="floatingTextarea2" style="height: 100px"><?=$board_data['content']?></textarea>
+                    <textarea class="form-control" name="content" placeholder="내용을 입력해주세요" id="floatingTextarea2" style="height: 160px"><?=$board_data['content']?></textarea>
                 </div>
                 <br>
-                <? if($user['sid'] == $board_data['usid']) { ?>
-                    <button class="red_btn" type="button">삭제</button>
-                <? } ?>
-                    <button type="submit"/><?=($board_number) ? '수정' : '제출'?>
-                <button type="button" onclick="history.back()">뒤로</button>
+                <div class="form_btnBox">
+                    <? if($user['sid'] == $board_data['usid']) { ?>
+                        <button class="red_btn" type="button">삭제</button>
+                    <? } ?>
+                        <button type="submit"/><?=($board_number) ? '수정' : '제출'?>
+                    <button type="button" onclick="history.back()">뒤로</button>
+                </div>
             </div>
         </form>
     </section>

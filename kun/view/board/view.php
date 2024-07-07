@@ -24,7 +24,7 @@ $BoardController->count($number);
             <input type="hidden" name="type" value="board">
             <input type="hidden" name="mode" value="insert">
             <input type="hidden" name="sign_date" value="<?=$time?>">
-            <div class="inner">
+            <div class="inner view_detail_whole">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">작성자</span>
                     <input type="text" name="writer" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?=$user['user_name']?>" readonly>
