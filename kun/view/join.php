@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/include/include.header.php';
 ?>
 <body>
-
+TEST
 <section id="banner">
     <div class="inner login_form">
         <h1>회원가입</h1>
