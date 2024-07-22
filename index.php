@@ -3,19 +3,32 @@
 	Projection by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
---><html><head><title>Projection by TEMPLATED</title><meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="assets/css/main.css"></head><body>
+-->
+<html>
+<head><title>Projection by TEMPLATED</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
 
 <!-- Header -->
-<header id="header"><div class="inner">
+<header id="header">
+    <div class="inner">
         <a href="index.html" class="logo"><strong>Projection</strong> by TEMPLATED</a>
         <nav id="nav"><a href="index.html">Home</a>
             <a href="generic.html">Generic</a>
             <a href="elements.html">Elements</a>
-        </nav><a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        </nav>
+        <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
     </div>
-</header><!-- Banner --><section id="banner"><div class="inner">
+</header><!-- Banner -->
+<section id="banner">
+    <div class="inner">
         <header><h1>Welcome to Projection</h1>
-        </header><div class="flex ">
+        </header>
+        <div class="flex ">
 
             <div>
                 <span class="icon fa-car"></span>
@@ -38,22 +51,37 @@
         </div>
 
         <footer><a href="#" class="button">Get Started</a>
-        </footer></div>
-</section><!-- Three --><section id="three" class="wrapper align-center"><div class="inner">
+        </footer>
+    </div>
+</section><!-- Three -->
+<section id="three" class="wrapper align-center">
+    <div class="inner">
         <div class="flex flex-2">
-            <article><div class="image round">
+            <article>
+                <div class="image round">
                     <img src="images/pic01.jpg" alt="Pic 01" width="150" height="150"></div>
                 <header><h3>Lorem ipsum<br> dolor amet nullam</h3>
-                </header><p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br>euismod in, pharetra a, ultricies in diam sed arcu. Cras<br>consequat  egestas augue vulputate.</p>
+                </header>
+                <p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br>euismod in, pharetra a, ultricies in diam
+                    sed arcu. Cras<br>consequat egestas augue vulputate.</p>
                 <footer><a href="#" class="button">Learn More</a>
-                </footer></article><article><div class="image round">
+                </footer>
+            </article>
+            <article>
+                <div class="image round">
                     <img src="images/pic02.jpg" alt="Pic 02" width="150" height="150"></div>
                 <header><h3>Sed feugiat<br> tempus adipicsing</h3>
-                </header><p>Pellentesque fermentum dolor. Aliquam quam lectus<br>facilisis auctor, ultrices ut, elementum vulputate, nunc<br> blandit ellenste egestagus commodo.</p>
+                </header>
+                <p>Pellentesque fermentum dolor. Aliquam quam lectus<br>facilisis auctor, ultrices ut, elementum
+                    vulputate, nunc<br> blandit ellenste egestagus commodo.</p>
                 <footer><a href="#" class="button">Learn More</a>
-                </footer></article></div>
+                </footer>
+            </article>
+        </div>
     </div>
-</section><!-- Footer --><footer id="footer"><div class="inner">
+</section><!-- Footer -->
+<footer id="footer">
+    <div class="inner">
 
         <h3>Get in touch</h3>
 
@@ -68,12 +96,20 @@
             <div class="field">
                 <label for="message">Message</label>
                 <textarea name="message" id="message" rows="6" placeholder="Message"></textarea></div>
-            <ul class="actions"><li><input value="Send Message" class="button alt" type="submit"></li>
-            </ul></form>
+            <ul class="actions">
+                <li><input value="Send Message" class="button alt" type="submit"></li>
+            </ul>
+        </form>
     </div>
-</footer><div class="copyright">
+</footer>
+<div class="copyright">
     Made with: <a href="https://templated.co/">Templated.co</a>
 </div>
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script></body></html>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
