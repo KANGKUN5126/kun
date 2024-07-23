@@ -8,10 +8,11 @@ $boardData = $BoardController->boardList();
 ?>
 
     <body>
-
     <section id="banner">
         <div class="inner">
-            <header><h1>게시판</h1>
+
+            <header>
+                <h1>게시판</h1>
             </header>
             <div class="flex ">
                 <table class="table">
@@ -24,6 +25,7 @@ $boardData = $BoardController->boardList();
                         <th scope="col">조회</th>
                     </tr>
                     </thead>
+
                     <tbody class="table-group-divider">
                     <?php if ($boardData): ?>
                         <?php foreach ($boardData as $index => $row): ?>

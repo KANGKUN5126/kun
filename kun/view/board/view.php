@@ -27,7 +27,7 @@ $BoardController->count($number);
             <div class="inner view_detail_whole">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">작성자</span>
-                    <input type="text" name="writer" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?=$user['user_name']?>" readonly>
+                    <input type="text" name="writer" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?=$board_data['writer']?>" readonly>
                 </div>
 
                 <div class="input-group mb-3">
